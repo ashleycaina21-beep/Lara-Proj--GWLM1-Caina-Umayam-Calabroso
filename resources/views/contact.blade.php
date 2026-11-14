@@ -2,9 +2,10 @@
 @section('title', 'Contact | NOIR Café')
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/noir-final.css') }}?v=1">
+<link rel="stylesheet" href="{{ asset('css/contact.css') }}?v=1">
 @endpush
 @section('content')
-<main class="noir-inner-page">
+<div class="noir-inner-page">
   <div class="noir-inner-wrap">
     <p class="noir-inner-eyebrow">Let's connect</p>
     <h1 class="noir-inner-title">Get in <em>Touch.</em></h1>
@@ -31,7 +32,7 @@
       </section>
     </div>
   </div>
-</main>
+</div>
 @endsection
 @push('scripts')
 <script defer src="{{ asset('js/noir-final.js') }}?v=1"></script>
