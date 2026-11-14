@@ -67,7 +67,7 @@
 
                 <div class="noir-scene-panel">
 
-                    <strong class="noir-scene-name">THE FIRST POUR</strong>
+                    <strong class="noir-scene-name" aria-live="polite" aria-atomic="true">THE FIRST POUR</strong>
                     <div class="noir-scene-actions">
                         <button class="noir-arrow noir-prev"
                                 type="button" aria-label="Previous scene">
