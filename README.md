@@ -146,10 +146,17 @@ http://127.0.0.1:8000
 
 Add screenshots of the completed website pages below.
 
-- **Home Page:** `docs/screenshots/home.png`
-- **Menu Page:** `docs/screenshots/menu.png`
-- **About Page:** `docs/screenshots/about.png`
-- **Contact Page:** `docs/screenshots/contact.png`
+### Home Page
+![NOIR Cafe Home Page](docs/screenshots/home.png)
+
+### Menu Page
+![NOIR Cafe Menu Page](docs/screenshots/menu.png)
+
+### About Page
+![NOIR Cafe About Page](docs/screenshots/about.png)
+
+### Contact Page
+![NOIR Cafe Contact Page](docs/screenshots/contact.png)
 
 ## Branching and Collaboration
 
