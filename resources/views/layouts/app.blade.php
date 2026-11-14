@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,28 +9,44 @@
   @stack('styles')
 </head>
 <body>
-  <header class="site-header">
-   <a class="brand" href="{{ route('home') }}">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <span class="brand-name">
+  <header class="site-header">
+    <a class="brand" href="{{ route('home') }}">
+      <span class="brand-name">
         NOIR
         <small>CAFÉ</small>
-    </span>
-</a>
+      </span>
+    </a>
+
     <nav aria-label="Main navigation">
-      <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">HOME</a>
+      <a href="{{ route('home') }}"
+         class="{{ request()->routeIs('home') ? 'active' : '' }}"
+         @if(request()->routeIs('home')) aria-current="page" @endif>HOME</a>
 
-<a href="{{ route('menu') }}">MENU</a>
+      <a href="{{ route('menu') }}"
+         class="{{ request()->routeIs('menu') ? 'active' : '' }}"
+         @if(request()->routeIs('menu')) aria-current="page" @endif>MENU</a>
 
-      <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">ABOUT</a>
-      <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">CONTACT</a>
+      <a href="{{ route('about') }}"
+         class="{{ request()->routeIs('about') ? 'active' : '' }}"
+         @if(request()->routeIs('about')) aria-current="page" @endif>ABOUT</a>
+
+      <a href="{{ route('contact') }}"
+         class="{{ request()->routeIs('contact') ? 'active' : '' }}"
+         @if(request()->routeIs('contact')) aria-current="page" @endif>CONTACT</a>
     </nav>
   </header>
-  <main>@yield('content')</main>
+
+  <main id="main-content" tabindex="-1">
+    @yield('content')
+  </main>
+
   <footer class="site-footer">
     <p>© {{ date('Y') }} NOIR Café. Crafted with care.</p>
-    <p>Group Members: Caiña · Umayam · Calabroso</p>
+    <p>Group Members: Ashley Shanne P. Caiña · Carl Umayam · Richelle Ann W. Calabroso</p>
   </footer>
+
   @stack('scripts')
 </body>
 </html>

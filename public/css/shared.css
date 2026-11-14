@@ -205,3 +205,22 @@ body {
     background: #241915 !important;
     border-top: 1px solid #C9A46A;
 }
+
+/* Accessibility: Skip to main content */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 9999;
+    padding: 12px 18px;
+    background: #C9A46A;
+    color: #171717;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.skip-link:focus {
+    top: 16px;
+    outline: 3px solid #F5EBDD;
+    outline-offset: 3px;
+}
