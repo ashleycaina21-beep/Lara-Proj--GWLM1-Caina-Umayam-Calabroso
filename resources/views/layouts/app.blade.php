@@ -28,7 +28,7 @@
   <main>@yield('content')</main>
   <footer class="site-footer">
     <p>© {{ date('Y') }} NOIR Café. Crafted with care.</p>
-    <p>Group Members: Caiña · Umayam · Calabroso</p>
+    <p>Group Members: Ashley Shanne P. Caiña · Carl Umayam · Richelle Ann W. Calabroso</p>
   </footer>
   @stack('scripts')
 </body>
