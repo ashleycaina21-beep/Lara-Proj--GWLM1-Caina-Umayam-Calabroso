@@ -20,11 +20,27 @@
       </section>
       <section class="noir-inner-card">
         <h2>Send a message</h2>
-        <form id="noir-demo-contact" class="noir-contact-form">
-          <div class="noir-field"><label for="noir-fullname">Full name</label><input id="noir-fullname" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="Your full name"></div>
-          <div class="noir-field"><label for="noir-email">Email address</label><input id="noir-email" name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com"></div>
-          <div class="noir-field wide"><label for="noir-subject">Subject</label><input id="noir-subject" name="subject" type="text" required maxlength="160" placeholder="How can we help?"></div>
-          <div class="noir-field wide"><label for="noir-message">Message</label><textarea id="noir-message" name="message" required maxlength="3000" placeholder="Write your message..."></textarea></div>
+        <form id="noir-demo-contact" class="noir-contact-form" novalidate>
+          <div class="noir-field">
+            <label for="noir-fullname">Full name</label>
+            <input id="noir-fullname" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="Your full name" aria-describedby="noir-fullname-error">
+            <span class="noir-field-error" id="noir-fullname-error" role="alert"></span>
+          </div>
+          <div class="noir-field">
+            <label for="noir-email">Email address</label>
+            <input id="noir-email" name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com" aria-describedby="noir-email-error">
+            <span class="noir-field-error" id="noir-email-error" role="alert"></span>
+          </div>
+          <div class="noir-field wide">
+            <label for="noir-subject">Subject</label>
+            <input id="noir-subject" name="subject" type="text" required maxlength="160" placeholder="How can we help?" aria-describedby="noir-subject-error">
+            <span class="noir-field-error" id="noir-subject-error" role="alert"></span>
+          </div>
+          <div class="noir-field wide">
+            <label for="noir-message">Message</label>
+            <textarea id="noir-message" name="message" required maxlength="3000" placeholder="Write your message..." aria-describedby="noir-message-error"></textarea>
+            <span class="noir-field-error" id="noir-message-error" role="alert"></span>
+          </div>
           <button class="noir-form-button" type="submit">PREVIEW MESSAGE ↗</button>
           <p class="noir-form-note">This is a front-end demo. Submitting validates the fields but does not send or save your message.</p>
           <p class="noir-form-feedback" id="noir-form-feedback" role="status" aria-live="polite"></p>
