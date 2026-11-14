@@ -1,0 +1,440 @@
+
+/* NOIR CAFE — FINAL POLISH */
+
+:root {
+    --noir-ink: #171717;
+    --noir-espresso: #2C1E19;
+    --noir-cream: #F5EBDD;
+    --noir-gold: #C9A46A;
+    --noir-taupe: #A89B8C;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.noir-experience {
+    overflow-x: clip;
+}
+
+/* HOMEPAGE COLLECTION VIDEO FIX */
+
+.noir-collection .noir-product-media {
+    isolation: isolate;
+    background: radial-gradient(
+        ellipse at 52% 44%,
+        #63412c,
+        #261a16 67%,
+        #171312
+    );
+    min-height: 300px;
+}
+
+.noir-collection .noir-product-media::before {
+    content: "NOIR / CAFÉ";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(245,235,221,.22);
+    font: normal 30px Georgia, serif;
+    letter-spacing: .14em;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+.noir-collection .noir-product-media video {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity .7s ease, transform .9s ease;
+}
+
+.noir-collection .noir-product-media video.noir-ready {
+    opacity: 1;
+}
+
+.noir-collection .noir-product-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+        180deg,
+        rgba(10,8,7,.18),
+        transparent 46%,
+        rgba(10,8,7,.3)
+    );
+}
+
+.noir-collection .noir-product-index {
+    z-index: 3;
+}
+
+.noir-collection .noir-product {
+    border: 1px solid rgba(201,164,106,.15);
+    box-shadow: 0 14px 36px rgba(44,30,25,.09);
+}
+
+.noir-collection .noir-product-info {
+    min-height: 130px;
+}
+
+.noir-collection .noir-product-info h3 {
+    font-size: clamp(22px, 2vw, 29px);
+}
+
+/* ABOUT AND CONTACT PAGE */
+
+.noir-inner-page {
+    min-height: 70vh;
+    color: var(--noir-cream);
+    background:
+        radial-gradient(
+            ellipse at 68% 18%,
+            rgba(121,73,45,.27),
+            transparent 46%
+        ),
+        linear-gradient(
+            145deg,
+            #171717,
+            #2C1E19 62%,
+            #171717
+        );
+    padding: clamp(55px,7vw,95px) 24px
+             clamp(80px,9vw,130px);
+}
+
+.noir-inner-wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.noir-inner-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--noir-gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    margin: 0 0 19px;
+}
+
+.noir-inner-eyebrow::before {
+    content: "";
+    height: 1px;
+    width: 38px;
+    background: var(--noir-gold);
+}
+
+.noir-inner-title {
+    font: 400 clamp(50px,7.2vw,110px)/.98 Georgia, serif;
+    letter-spacing: -.055em;
+    margin: 0 0 25px;
+}
+
+.noir-inner-title em {
+    color: var(--noir-gold);
+}
+
+.noir-inner-lead {
+    max-width: 670px;
+    font-size: clamp(15px,1.5vw,18px);
+    line-height: 1.9;
+    color: #d4c4b5;
+    margin: 0 0 55px;
+}
+
+.noir-inner-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 22px;
+}
+
+.noir-inner-card {
+    padding: clamp(27px,3.2vw,45px);
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(201,164,106,.25);
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.12);
+    transition: .4s ease;
+}
+
+.noir-inner-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(201,164,106,.65);
+    background: rgba(255,255,255,.055);
+}
+
+.noir-inner-card h2 {
+    color: var(--noir-gold);
+    font: 400 clamp(25px,2.8vw,35px)/1.2 Georgia, serif;
+    margin: 0 0 20px;
+}
+
+.noir-inner-card p {
+    color: #e0d1c3;
+    line-height: 1.9;
+    margin: 0;
+}
+
+.noir-inner-subhead {
+    font: 400 clamp(32px,4.2vw,55px)/1.2 Georgia, serif;
+    margin: 95px 0 28px;
+}
+
+/* TEAM CARDS */
+
+.noir-team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 20px;
+}
+
+.noir-team-card {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(19,14,12,.64);
+    border: 1px solid rgba(201,164,106,.2);
+    border-radius: 15px;
+    transition: .35s ease;
+}
+
+.noir-team-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--noir-gold);
+}
+
+.noir-team-mark {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg,#F5EBDD,#C9A46A);
+    color: #2C1E19;
+    font: 400 28px Georgia, serif;
+}
+
+.noir-team-card h3 {
+    font: 400 27px Georgia, serif;
+    margin: 0 0 12px;
+    overflow-wrap: anywhere;
+}
+
+.noir-team-card p {
+    color: #c8b7a8;
+    font-size: 13px;
+    letter-spacing: .08em;
+}
+
+/* CONTACT PAGE */
+
+.noir-contact-grid {
+    display: grid;
+    grid-template-columns: minmax(280px,.85fr) minmax(0,1.15fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.noir-contact-meta {
+    display: grid;
+    gap: 23px;
+}
+
+.noir-contact-meta small {
+    display: block;
+    color: var(--noir-gold);
+    font-size: 11px;
+    letter-spacing: .18em;
+    margin-bottom: 8px;
+}
+
+.noir-contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.noir-field {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+}
+
+.noir-field.wide {
+    grid-column: 1 / -1;
+}
+
+.noir-field label {
+    color: var(--noir-cream);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.noir-field input,
+.noir-field textarea {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid rgba(201,164,106,.34);
+    border-radius: 7px;
+    outline: none;
+    padding: 15px 17px;
+    color: #fff;
+    background: rgba(12,9,8,.45);
+    font: inherit;
+    transition: .2s;
+}
+
+.noir-field input:focus,
+.noir-field textarea:focus {
+    border-color: var(--noir-gold);
+    box-shadow: 0 0 0 3px rgba(201,164,106,.15);
+}
+
+.noir-field textarea {
+    min-height: 165px;
+    resize: vertical;
+}
+
+.noir-form-button {
+    grid-column: 1 / -1;
+    padding: 16px 25px;
+    border: 1px solid var(--noir-gold);
+    border-radius: 6px;
+    color: #171717;
+    background: var(--noir-gold);
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.noir-form-button:hover {
+    filter: brightness(1.13);
+    transform: translateY(-2px);
+}
+
+.noir-form-note,
+.noir-form-feedback {
+    grid-column: 1 / -1;
+    color: #cbbdaf;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 760px) {
+    .noir-inner-grid,
+    .noir-contact-grid,
+    .noir-team-grid,
+    .noir-contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .noir-inner-subhead {
+        margin-top: 60px;
+    }
+
+    .noir-collection .noir-product-info {
+        min-height: initial;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .noir-inner-card,
+    .noir-team-card,
+    .noir-form-button {
+        transition: none !important;
+    }
+}
+
+
+/* NOIR SIGNATURES — CLEAN FINAL STYLING */
+
+.noir-collection .noir-product {
+    overflow: hidden;
+    border: 1px solid rgba(201, 164, 106, 0.2);
+    transition: transform .5s ease, box-shadow .5s ease;
+}
+
+.noir-collection .noir-product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(201, 164, 106, .18);
+}
+
+.noir-collection .noir-product-media {
+    position: relative;
+    height: 350px;
+    min-height: 350px;
+    overflow: hidden;
+    background: #2C1E19;
+}
+
+.noir-collection .noir-product-media::before {
+    content: none;
+    display: none;
+}
+
+.noir-collection .noir-product-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: noirCoffeeZoom 8s ease-in-out infinite alternate;
+}
+
+.noir-collection .noir-product:hover img {
+    animation-play-state: paused;
+    filter: brightness(1.1);
+}
+
+@keyframes noirCoffeeZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .noir-collection .noir-product-media img {
+        animation: none;
+    }
+}
+
+/* FORCE ZOOM IN AND OUT — SIGNATURE PICTURES */
+
+.noir-collection .noir-product .noir-product-media img {
+    animation-name: noirBreathingZoom !important;
+    animation-duration: 4s !important;
+    animation-timing-function: ease-in-out !important;
+    animation-iteration-count: infinite !important;
+    animation-direction: alternate !important;
+    animation-play-state: running !important;
+    transform-origin: center center !important;
+}
+
+@keyframes noirBreathingZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.18);
+    }
+}
+
+.noir-collection .noir-product:hover .noir-product-media img {
+    animation-play-state: running !important;
+}

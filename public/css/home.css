@@ -1,0 +1,830 @@
+
+/* ==========================================
+   NOIR CAFÉ — CINEMATIC HOMEPAGE
+   Palette: Charcoal / Espresso / Gold / Cream
+========================================== */
+
+.noir-experience {
+    --ink: #171717;
+    --espresso: #2C1E19;
+    --cream: #F5EBDD;
+    --gold: #C9A46A;
+    --taupe: #A89B8C;
+    background: var(--ink);
+    color: var(--cream);
+    overflow: clip;
+}
+
+.noir-experience *,
+.noir-experience *::before,
+.noir-experience *::after {
+    box-sizing: border-box;
+}
+
+.noir-experience a {
+    color: inherit;
+}
+
+/* FULL-SCREEN HERO */
+
+.noir-stage {
+    position: relative;
+    isolation: isolate;
+    min-height: 760px;
+    min-height: 100svh;
+    background: #120d0b;
+    overflow: hidden;
+}
+
+.noir-films,
+.noir-film,
+.noir-vignette,
+.noir-grain {
+    position: absolute;
+    inset: 0;
+}
+
+.noir-films {
+    z-index: -5;
+}
+
+.noir-film {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transform: scale(1.18);
+    filter: blur(14px) brightness(.55) saturate(.7);
+    transition:
+        opacity 1.35s ease,
+        transform 2.2s cubic-bezier(.16,1,.3,1),
+        filter 1.5s ease;
+}
+
+.noir-film.is-active {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0) brightness(.72) saturate(.85);
+}
+
+.noir-film.is-leaving {
+    opacity: 0;
+    transform: scale(1.12) translateX(-3%);
+    filter: blur(12px) brightness(.4);
+}
+
+.noir-vignette {
+    z-index: -4;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12,8,7,.88),
+            rgba(18,12,10,.32) 48%,
+            rgba(12,8,7,.3)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(12,8,7,.96),
+            transparent 48%,
+            rgba(12,8,7,.55)
+        );
+}
+
+.noir-grain {
+    z-index: -2;
+    opacity: .15;
+    pointer-events: none;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 3px,
+            rgba(255,255,255,.035) 4px 5px
+        );
+    background-size: 100% 7px;
+    animation: noirGrain 1s steps(3) infinite;
+}
+
+.noir-glow {
+    position: absolute;
+    z-index: -3;
+    width: 55vw;
+    height: 55vw;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(75px);
+    mix-blend-mode: screen;
+}
+
+.noir-glow-one {
+    top: -30%;
+    right: -15%;
+    background: radial-gradient(
+        circle,
+        rgba(201,164,106,.22),
+        transparent 65%
+    );
+    animation: noirDriftOne 11s ease-in-out infinite alternate;
+}
+
+.noir-glow-two {
+    bottom: -45%;
+    left: -20%;
+    background: radial-gradient(
+        circle,
+        rgba(119,56,27,.32),
+        transparent 70%
+    );
+    animation: noirDriftTwo 13s ease-in-out infinite alternate;
+}
+
+/* HERO CONTENT */
+
+.noir-stage-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100svh;
+    padding: clamp(35px,5vw,80px) clamp(24px,6vw,105px) 90px;
+}
+
+.noir-stage-kicker {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .3em;
+    opacity: 0;
+    animation: noirRise 1s ease .2s forwards;
+}
+
+.noir-kicker-line {
+    width: 38px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.noir-masthead {
+    position: absolute;
+    top: 19%;
+    left: 50%;
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(100px, 19vw, 310px);
+    font-weight: 400;
+    line-height: .68;
+    letter-spacing: -.095em;
+    color: var(--cream);
+    text-shadow: 0 10px 45px rgba(0,0,0,.4);
+    pointer-events: none;
+}
+
+.noir-masthead span {
+    display: block;
+    opacity: 0;
+    animation: noirTitle 1.6s
+        cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.noir-masthead span:first-child {
+    padding-right: .12em;
+}
+
+.noir-masthead span:last-child {
+    margin-top: .15em;
+    color: rgba(245,235,221,.8);
+    animation-delay: .35s;
+}
+
+.noir-stage-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 35px;
+    margin-top: auto;
+}
+
+.noir-intro {
+    max-width: 420px;
+    opacity: 0;
+    animation: noirRise 1.2s ease 1s forwards;
+}
+
+.noir-overline,
+.noir-scene-type {
+    font-size: 10px;
+    letter-spacing: .3em;
+    color: var(--gold);
+}
+
+.noir-intro h2 {
+    margin: 16px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(29px,3.2vw,52px);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.noir-intro p {
+    max-width: 320px;
+    margin-bottom: 25px;
+    color: #d3c4b6;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.noir-discover {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    padding: 15px 20px;
+    border: 1px solid var(--gold);
+    background: rgba(201,164,106,.12);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-decoration: none;
+    transition: background .3s, color .3s, transform .3s;
+}
+
+.noir-discover:hover {
+    background: var(--gold);
+    color: var(--ink);
+    transform: translateY(-4px);
+}
+
+.noir-scene-panel {
+    width: 230px;
+    flex-shrink: 0;
+    padding: 20px;
+    background: rgba(18,12,10,.55);
+    border: 1px solid rgba(201,164,106,.35);
+    backdrop-filter: blur(14px);
+    opacity: 0;
+    animation: noirRise 1.2s ease 1.25s forwards;
+}
+
+.noir-scene-name {
+    display: block;
+    margin-top: 10px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.noir-scene-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.noir-arrow {
+    width: 37px;
+    height: 37px;
+    border: 1px solid rgba(201,164,106,.55);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--cream);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background .25s, color .25s;
+}
+
+.noir-arrow:hover {
+    background: var(--gold);
+    color: var(--ink);
+}
+
+.noir-scene-count {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: .14em;
+}
+
+.noir-progress {
+    height: 2px;
+    margin-top: 18px;
+    background: rgba(255,255,255,.18);
+    overflow: hidden;
+}
+
+.noir-progress-fill {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--gold);
+}
+
+.noir-progress-fill.is-running {
+    animation: noirProgress 9s linear forwards;
+}
+
+.noir-scroll-cue {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    white-space: nowrap;
+    color: var(--taupe);
+    font-size: 9px;
+    letter-spacing: .3em;
+}
+
+.noir-scroll-cue span {
+    font-size: 20px;
+    animation: noirBounce 2s infinite;
+}
+
+/* COFFEE COLLECTION */
+
+.noir-collection {
+    padding: 115px clamp(24px,6vw,105px) 135px;
+    background: #F5EBDD;
+    color: #2C1E19;
+}
+
+.noir-collection-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 55px;
+}
+
+.noir-section-kicker {
+    color: #88663e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .24em;
+}
+
+.noir-collection h2 {
+    margin: 20px 0 0;
+    font-family: Georgia, serif;
+    font-size: clamp(40px,5vw,78px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -.05em;
+}
+
+.noir-collection h2 em {
+    color: #a77c49;
+}
+
+.noir-collection-intro {
+    max-width: 230px;
+    color: #6d5b4e;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.noir-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 24px;
+}
+
+.noir-product {
+    min-width: 0;
+    background: #241712;
+    color: var(--cream);
+    overflow: hidden;
+    transition: transform .4s, box-shadow .4s;
+}
+
+.noir-product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(44,30,25,.2);
+}
+
+.noir-product-media {
+    position: relative;
+    height: clamp(250px,32vw,440px);
+    overflow: hidden;
+    background: #39271d;
+}
+
+.noir-product-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s;
+}
+
+.noir-product:hover video {
+    transform: scale(1.08);
+}
+
+.noir-product-index {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: .2em;
+}
+
+.noir-product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 15px;
+    padding: 25px 20px 28px;
+}
+
+.noir-product-info h3 {
+    margin: 0 0 8px;
+    font-family: Georgia,serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.noir-product-info p {
+    margin: 0;
+    color: #b9a99a;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.noir-product-info > span {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: .1em;
+    text-align: right;
+}
+
+/* FINAL STATEMENT */
+
+.noir-ending {
+    position: relative;
+    padding: 130px 25px;
+    text-align: center;
+    background:
+        radial-gradient(
+            ellipse at center,
+            #4b3021,
+            #171312 75%
+        );
+}
+
+.noir-ending p {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: .25em;
+}
+
+.noir-ending h2 {
+    max-width: 900px;
+    margin: 25px auto 35px;
+    font-family: Georgia,serif;
+    font-size: clamp(43px,7vw,100px);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.noir-ending h2 em {
+    color: var(--gold);
+}
+
+.noir-ending a {
+    display: inline-block;
+    padding: 16px 25px;
+    border: 1px solid var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: .18em;
+    transition: background .3s;
+}
+
+.noir-ending a:hover {
+    background: rgba(201,164,106,.2);
+}
+
+/* SCROLL REVEAL */
+
+.noir-reveal {
+    opacity: 0;
+    transform: translateY(65px);
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(.16,1,.3,1);
+}
+
+.noir-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* KEYFRAMES */
+
+@keyframes noirTitle {
+    from {
+        opacity: 0;
+        transform: translateY(80px) scale(1.1);
+        filter: blur(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes noirRise {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes noirDriftOne {
+    from { transform: translate(-10%,-5%) scale(.8); }
+    to { transform: translate(12%,10%) scale(1.2); }
+}
+
+@keyframes noirDriftTwo {
+    from { transform: translate(10%,5%) scale(.85); }
+    to { transform: translate(-12%,-10%) scale(1.2); }
+}
+
+@keyframes noirGrain {
+    from { transform: translateY(0); }
+    to { transform: translateY(7px); }
+}
+
+@keyframes noirProgress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes noirBounce {
+    0%,100% { transform: translateY(-3px); }
+    50% { transform: translateY(6px); }
+}
+
+/* MOBILE AND TABLET */
+
+@media (max-width: 900px) {
+    .noir-masthead {
+        top: 25%;
+        font-size: clamp(90px,21vw,180px);
+    }
+
+    .noir-stage-content {
+        padding-bottom: 100px;
+    }
+
+    .noir-collection-grid {
+        gap: 14px;
+    }
+
+    .noir-product-info {
+        display: block;
+    }
+
+    .noir-product-info > span {
+        display: block;
+        margin-top: 15px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 650px) {
+    .noir-stage {
+        min-height: 720px;
+    }
+
+    .noir-stage-content {
+        min-height: 720px;
+        padding: 32px 22px 75px;
+    }
+
+    .noir-masthead {
+        top: 22%;
+        font-size: clamp(75px,24vw,150px);
+    }
+
+    .noir-stage-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+    }
+
+    .noir-intro h2 {
+        font-size: 35px;
+    }
+
+    .noir-scene-panel {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .noir-collection {
+        padding: 75px 20px 85px;
+    }
+
+    .noir-collection-head {
+        display: block;
+    }
+
+    .noir-collection-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .noir-product-media {
+        height: 380px;
+    }
+
+    .noir-ending {
+        padding: 90px 20px;
+    }
+
+    .noir-glow {
+        width: 95vw;
+        height: 95vw;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .noir-experience *,
+    .noir-experience *::before,
+    .noir-experience *::after {
+        animation: none !important;
+        transition-duration: .01ms !important;
+    }
+
+    .noir-masthead span,
+    .noir-stage-kicker,
+    .noir-intro,
+    .noir-scene-panel,
+    .noir-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+
+    .noir-film.is-active {
+        transform: none;
+    }
+}
+
+/* =========================================
+   NOIR CAFÉ — ANIMATION FIX
+   CINEMATIC SCENE TRANSITIONS
+========================================= */
+
+/* Dramatic reveal kada bag-ong video */
+
+.noir-film.is-active {
+    opacity: 1;
+    animation:
+        noirFilmReveal 1.7s
+        cubic-bezier(.16, 1, .3, 1) both,
+        noirFilmMotion 9s ease-in-out
+        1.7s infinite alternate;
+}
+
+/* Exit animation sa previous video */
+
+.noir-film.is-leaving {
+    animation: noirFilmExit 1.2s ease-in forwards;
+}
+
+/* Visible moving background lighting */
+
+.noir-glow-one {
+    opacity: .9;
+    animation: noirGoldenMove 6s ease-in-out
+        infinite alternate !important;
+}
+
+.noir-glow-two {
+    opacity: .85;
+    animation: noirGoldenMoveTwo 8s ease-in-out
+        infinite alternate !important;
+}
+
+/* Golden spotlight over the entire hero */
+
+.noir-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+        115deg,
+        transparent 15%,
+        rgba(201,164,106,.12) 48%,
+        transparent 75%
+    );
+    background-size: 250% 100%;
+    animation: noirSpotlight 7s linear infinite;
+}
+
+/* CINEMATIC KEYFRAMES */
+
+@keyframes noirFilmReveal {
+    0% {
+        opacity: 0;
+        transform: translateX(12%) scale(1.35);
+        filter: blur(22px) brightness(.25);
+    }
+
+    55% {
+        opacity: .85;
+        filter: blur(5px) brightness(.65);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0) brightness(.72);
+    }
+}
+
+@keyframes noirFilmMotion {
+    from {
+        transform: scale(1);
+        filter: brightness(.72) saturate(.85);
+    }
+
+    to {
+        transform: scale(1.09);
+        filter: brightness(.85) saturate(1);
+    }
+}
+
+@keyframes noirFilmExit {
+    from {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0) brightness(.72);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-8%) scale(1.2);
+        filter: blur(18px) brightness(.2);
+    }
+}
+
+@keyframes noirGoldenMove {
+    from {
+        transform: translate(-20%, -10%) scale(.8);
+        opacity: .45;
+    }
+
+    to {
+        transform: translate(20%, 15%) scale(1.4);
+        opacity: 1;
+    }
+}
+
+@keyframes noirGoldenMoveTwo {
+    from {
+        transform: translate(15%, 10%) scale(.8);
+        opacity: .4;
+    }
+
+    to {
+        transform: translate(-20%, -15%) scale(1.4);
+        opacity: .9;
+    }
+}
+
+@keyframes noirSpotlight {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .noir-film.is-active,
+    .noir-film.is-leaving,
+    .noir-glow-one,
+    .noir-glow-two,
+    .noir-stage::after {
+        animation: none !important;
+    }
+}
