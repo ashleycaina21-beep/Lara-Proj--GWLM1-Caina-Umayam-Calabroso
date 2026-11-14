@@ -51,5 +51,6 @@
 </div>
 @endsection
 @push('scripts')
-<script defer src="{{ asset('js/noir-final.js') }}?v=1"></script>
+<script defer src="{{ asset('js/contact.js') }}?v=1"></script>
 @endpush
+
