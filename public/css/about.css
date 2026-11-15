@@ -1,1 +1,25 @@
-.about-page{padding-top:45px}.about-page>h1,.contact-page>h1{font-size:clamp(2.6rem,6vw,4.5rem);margin:8px 0 22px}.about-page>p:not(.eyebrow),#extra-story{max-width:750px;color:#A89B8C}.values{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:48px 0}.values article,.team-card{background:#2C1E19;padding:28px;border:1px solid #47352b;border-radius:16px}.values h2{color:#C9A46A}.values p,.team-card p{color:#A89B8C}.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.team-card{text-align:center}.avatar{margin:0 auto 16px;width:72px;height:72px;display:grid;place-items:center;border-radius:50%;background:#C9A46A;color:#171717;font-weight:900;font-size:1.5rem}@media(max-width:700px){.values,.team-grid{grid-template-columns:1fr}}
+
+/* NOIR CAFÉ — ABOUT PAGE */
+
+/* Additional Story */
+.noir-inner-page #extra-story {
+    max-width: 750px;
+    color: #A89B8C;
+}
+
+.noir-inner-page #extra-story[hidden] {
+    display: none;
+}
+
+/* Read More / Read Less Button */
+.noir-inner-page #read-more {
+    background: transparent;
+    color: #C9A46A;
+    border: 1px solid #C9A46A;
+    padding: 12px 26px;
+    margin: 12px 0 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
