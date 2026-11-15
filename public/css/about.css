@@ -23,3 +23,9 @@
     cursor: pointer;
     transition: all .3s ease;
 }
+
+/* Keyboard accessibility for Read More button */
+.noir-inner-page #read-more:focus-visible {
+    outline: 2px solid #C9A46A;
+    outline-offset: 4px;
+}
