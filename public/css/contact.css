@@ -1,1 +1,17 @@
-.contact-page{padding-top:45px}.intro{color:#A89B8C}.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;margin-top:36px}.contact-info{background:#2C1E19;padding:30px;border-radius:16px;align-self:start}.contact-info h2{color:#C9A46A}.contact-info p{color:#F5EBDD}.contact-info .note{color:#A89B8C;font-size:.85rem}form{display:flex;flex-direction:column;gap:7px}label{font-weight:700}input,textarea{font:inherit;padding:13px 14px;background:#2C1E19;border:1px solid #665448;border-radius:8px;color:#F5EBDD;width:100%}input:focus,textarea:focus{outline:2px solid #C9A46A;outline-offset:1px}.error{color:#ffadad;min-height:19px}input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#ffadad}#form-status{color:#C9A46A;font-weight:700}@media(max-width:750px){.contact-grid{grid-template-columns:1fr}}
+/* ==========================================
+   CONTACT FORM VALIDATION STYLES
+   Member 3 - Calabroso
+   ========================================== */
+
+.noir-field-error {
+    display: block;
+    min-height: 18px;
+    margin-top: 2px;
+    color: #ffadad;
+    font-size: .85rem;
+}
+
+.noir-field input[aria-invalid="true"],
+.noir-field textarea[aria-invalid="true"] {
+    border-color: #ffadad;
+}
