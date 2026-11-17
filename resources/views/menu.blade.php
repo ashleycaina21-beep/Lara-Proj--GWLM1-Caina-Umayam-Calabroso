@@ -1,9 +1,13 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/menu.css') }}?v=1">
+@endpush
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/menu.css') }}?v=1">
 
-<main class="noir-menu">
+
+<div class="noir-menu">
 
     <section class="menu-hero">
         <p class="menu-eyebrow">NOIR CAFÉ / THE COLLECTION</p>
@@ -184,5 +188,5 @@
         <a href="{{ url('/') }}">BACK TO HOME</a>
     </section>
 
-</main>
+</div>
 @endsection

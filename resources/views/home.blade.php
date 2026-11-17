@@ -1,4 +1,4 @@
-
+﻿
 @extends('layouts.app')
 
 @section('title', 'NOIR Café | Beyond the Ordinary')
@@ -12,7 +12,7 @@
 
 @section('content')
 
-<main class="noir-experience">
+<div class="noir-experience">
 
     <!-- FULL SCREEN CINEMATIC HERO -->
     <section class="noir-stage" aria-label="NOIR Café cinematic introduction">
@@ -188,7 +188,7 @@
         </div>
     </section>
 
-</main>
+</div>
 
 @endsection
 

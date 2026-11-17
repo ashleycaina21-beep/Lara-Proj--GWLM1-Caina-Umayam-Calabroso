@@ -1,4 +1,4 @@
-
+﻿
 @extends('layouts.app')
 
 @section('title', 'About | NOIR Café')
@@ -9,7 +9,7 @@
 @endpush
 
 @section('content')
-<main class="noir-inner-page">
+<div class="noir-inner-page">
   <div class="noir-inner-wrap">
 
     <p class="noir-inner-eyebrow">Behind the brew</p>
@@ -89,7 +89,7 @@
     </div>
 
   </div>
-</main>
+</div>
 @endsection
 
 @push('scripts')
