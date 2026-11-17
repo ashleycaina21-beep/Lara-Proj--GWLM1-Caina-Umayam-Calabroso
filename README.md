@@ -164,9 +164,9 @@ Each group member works on an assigned development branch. Changes are submitted
 
 | Branch | Assigned Member |
 |---|---|
-| `dev-caina-leader` | Ashley Shanne P. Caiña |
-| `dev-umayam-about` | Carl Umayam |
-| `dev-calabroso-contact` | Richelle Ann W. Calabroso |
+| `dev-member1-Caina` | Ashley Shanne P. Caiña (Group Leader) |
+| `dev-member2-Umayam` | Carl Umayam |
+| `dev-member3-Calabroso` | Richelle Ann W. Calabroso |
 
 **Note:** Members should not directly push unfinished work to the `main` branch.
 
