@@ -146,10 +146,17 @@ http://127.0.0.1:8000
 
 Add screenshots of the completed website pages below.
 
-- **Home Page:** `docs/screenshots/home.png`
-- **Menu Page:** `docs/screenshots/menu.png`
-- **About Page:** `docs/screenshots/about.png`
-- **Contact Page:** `docs/screenshots/contact.png`
+### Home Page
+![NOIR Cafe Home Page](docs/screenshots/home.png)
+
+### Menu Page
+![NOIR Cafe Menu Page](docs/screenshots/menu.png)
+
+### About Page
+![NOIR Cafe About Page](docs/screenshots/about.png)
+
+### Contact Page
+![NOIR Cafe Contact Page](docs/screenshots/contact.png)
 
 ## Branching and Collaboration
 
@@ -157,9 +164,9 @@ Each group member works on an assigned development branch. Changes are submitted
 
 | Branch | Assigned Member |
 |---|---|
-| `dev-caina-leader` | Ashley Shanne P. Caiña |
-| `dev-umayam-about` | Carl Umayam |
-| `dev-calabroso-contact` | Richelle Ann W. Calabroso |
+| `dev-member1-Caina` | Ashley Shanne P. Caiña (Group Leader) |
+| `dev-member2-Umayam` | Carl Umayam |
+| `dev-member3-Calabroso` | Richelle Ann W. Calabroso |
 
 **Note:** Members should not directly push unfinished work to the `main` branch.
 
