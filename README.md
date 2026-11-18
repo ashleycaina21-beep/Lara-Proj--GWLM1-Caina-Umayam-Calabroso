@@ -42,7 +42,7 @@ The website provides visitors with an organized way to explore the café, learn 
 ### 4. Contact Page
 - Contact information
 - Customer inquiry form
-- Form validation and submission feedback
+- Client-side form validation and success feedback (messages are not sent or stored)
 
 ## Technologies Used
 
@@ -53,6 +53,8 @@ The website provides visitors with an organized way to explore the café, learn 
 - **CSS3** – Styling and responsive layout
 - **JavaScript** – Interactive website features
 - **Git and GitHub** – Version control and collaboration
+- **Node.js and npm** – Frontend dependency management and asset building
+- **Vite** – Frontend asset bundling
 
 ## Project Structure
 
@@ -73,6 +75,12 @@ public/
   videos/
 routes/
   web.php
+docs/
+  screenshots/
+    home.png
+    menu.png
+    about.png
+    contact.png
 ```
 
 ## Installation and Setup
@@ -81,62 +89,79 @@ routes/
 
 Make sure the following are installed:
 
-- PHP 8.4 or a compatible version
+- PHP 8.3 or later (PHP 8.4 used for development)
 - Composer
+- Node.js and npm
 - Git
 - A code editor such as Visual Studio Code
 
 ### Steps
 
-1. Clone the repository:
+**1. Clone the repository:**
 
 ```bash
 git clone https://github.com/ashleycaina21-beep/Lara-Proj--GWLM1-Caina-Umayam-Calabroso.git
 ```
 
-2. Navigate to the project directory:
+**2. Navigate to the project directory:**
 
 ```bash
 cd Lara-Proj--GWLM1-Caina-Umayam-Calabroso
 ```
 
-3. Install PHP dependencies:
+**3. Install PHP dependencies:**
 
 ```bash
 composer install
 ```
 
-4. Create the environment file:
+**4. Install frontend dependencies:**
+
+```bash
+npm install
+```
+
+**5. Build frontend assets:**
+
+```bash
+npm run build
+```
+
+**6. Create the environment file:**
+
+On macOS or Linux:
 
 ```bash
 cp .env.example .env
 ```
 
-On Windows PowerShell, use:
+On Windows PowerShell:
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-5. Generate the application key:
+**7. Generate the application key:**
 
 ```bash
 php artisan key:generate
 ```
 
-6. Run database migrations if required by the configured database:
+**8. Configure the database if required:**
+
+Configure the database connection in your `.env` file before running migrations. Run migrations only if required by the configured database.
 
 ```bash
 php artisan migrate
 ```
 
-7. Start the Laravel development server:
+**9. Start the Laravel development server:**
 
 ```bash
 php artisan serve
 ```
 
-8. Open the website:
+**10. Open the website:**
 
 ```text
 http://127.0.0.1:8000
@@ -144,18 +169,20 @@ http://127.0.0.1:8000
 
 ## Screenshots
 
-Add screenshots of the completed website pages below.
-
 ### Home Page
+
 ![NOIR Cafe Home Page](docs/screenshots/home.png)
 
 ### Menu Page
+
 ![NOIR Cafe Menu Page](docs/screenshots/menu.png)
 
 ### About Page
+
 ![NOIR Cafe About Page](docs/screenshots/about.png)
 
 ### Contact Page
+
 ![NOIR Cafe Contact Page](docs/screenshots/contact.png)
 
 ## Branching and Collaboration
@@ -168,7 +195,7 @@ Each group member works on an assigned development branch. Changes are submitted
 | `dev-member2-Umayam` | Carl Umayam |
 | `dev-member3-Calabroso` | Richelle Ann W. Calabroso |
 
-**Note:** Members should not directly push unfinished work to the `main` branch.
+**Note:** Members should not directly push unfinished work to the `main` branch. Changes should be submitted through Pull Requests for review before merging.
 
 ---
 
